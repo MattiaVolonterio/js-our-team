@@ -6,11 +6,12 @@ for (let member of team) {
   let memberName = member.name;
   let memberRole = member.role;
   let memberImg = member.image;
+  let memberImgEl = `<img src="./img/${memberImg}" alt="${memberName}">`;
 
   stringResult.innerHTML += `
   Il nome del membro è: ${memberName}, 
   il suo ruolo è: ${memberRole} 
-  e la sua immagine è: ${memberImg} 
+  e la sua immagine è: ${memberImgEl} 
   </br>
   </br>`;
 }
