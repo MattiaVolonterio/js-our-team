@@ -1,17 +1,20 @@
 // ## Recupero elementi dal DOM
-const stringResult = document.getElementById("string-result");
+const cardContainer = document.getElementById("card-container");
 
 // ## Ciclo l'array e recuper i dati
 for (let member of team) {
+  let memberImg = member.image;
   let memberName = member.name;
   let memberRole = member.role;
-  let memberImg = member.image;
-  let memberImgEl = `<img src="./img/${memberImg}" alt="${memberName}">`;
 
-  stringResult.innerHTML += `
-  Il nome del membro è: ${memberName}, 
-  il suo ruolo è: ${memberRole} 
-  e la sua immagine è: ${memberImgEl} 
-  </br>
-  </br>`;
+  cardContainer.innerHTML += `
+  <div class="col-4">
+    <div class="card text-center">
+        <img src="./img/${memberImg}" class="card-img-top" alt="${memberName}">
+        <div class="card-body">
+            <span class="card-title fs-2">${memberName}</span>
+            <span class="card-text d-block">${memberRole}</span>
+        </div>
+  </div>
+  `;
 }
